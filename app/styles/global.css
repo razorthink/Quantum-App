@@ -1,0 +1,41 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700);
+
+body {
+    background: #fafafa;
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+	font-size: 12px;
+}
+
+/*::::: RESETS ::::*/
+ul { padding: 0; margin: 0; list-style: none; }
+a, a:hover, a:visited, a:active { text-decoration: none; }
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Open Sans', sans-serif;
+}
+
+/*::::: HELPERS ::::*/
+.hidden {
+	display: none;
+}
+.pull-right {
+	float: right;
+}
+.pull-left {
+	float: left;
+}
+.right-caret {
+    border-bottom: 4px solid transparent;
+    border-top: 4px solid transparent;
+    border-left: 4px solid #000000;
+    display: inline-block;
+    height: 0;
+    opacity: 0.3;
+    vertical-align: top;
+    width: 0;
+}
+.caret {
+	opacity: 0.3;
+}
+

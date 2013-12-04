@@ -1,0 +1,534 @@
+/*====================================
+=            Brower Happy            =
+====================================*/
+
+.browsehappy {
+  background: #ccc;
+  color: #000;
+  margin: 0.2em 0;
+  padding: 0.2em 0;
+}
+
+/*-----  End of Brower Happy  ------*/
+
+#app {
+  background: #fff;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#app .logo {
+  -webkit-transition: .2s all;
+  background: url(../images/logo.png) no-repeat 50% 0px;
+  color: white;
+  display: block;
+  opacity: 0.5;
+  padding-top: 35px;
+  text-align: center;
+  width: 60px;
+}
+
+#app .logo:hover { opacity: 1; }
+
+#app.narrow #app-sidebar { width: 80px; }
+
+#app.narrow #app-content { left: 80px; }
+
+#app-sidebar {
+  background: #040b1a;
+  bottom: 0;
+  font-size: 12px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 180px;
+}
+
+#app-sidebar header { border-bottom: 1px solid rgba(255,255,255,0.1); box-shadow: 0 0px 10px 3px black; padding: 12px 10px; }
+
+#app-sidebar nav ul > li { border-bottom: 1px solid rgba(255,255,255,0.1); list-style: none; text-align: center; }
+
+#app-sidebar nav ul > li a {
+  -webkit-transition: .2s all;
+  color: #fff;
+  display: block;
+  font-size: 10px;
+  font-weight: 300;
+  opacity: 0.5;
+  padding: 25px 5px;
+  text-shadow: 0 0 1px black;
+}
+
+#app-sidebar nav ul > li.active a { background: rgba(255, 255, 255, 0.2); opacity: 1; }
+
+#app-sidebar nav ul > li a:hover,
+#app-sidebar nav ul > li a:active { opacity: 1; }
+
+#app-content {
+  -webkit-animation: .25s fade-in;
+  bottom: 0;
+  box-shadow: -1px 0 10px 0 rgba(0,0,0,0.5);
+  left: 180px;
+  min-width: 700px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+}
+
+#item-list {
+  bottom: 0;
+  min-width: 200px;
+  position: absolute;
+  top: 0;
+  width: 35%;
+  z-index: 2;
+}
+
+#item-list header {
+  background: #fff;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+  left: 0;
+  padding: 20px 25px;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+}
+
+#item-list h3 {
+  color: #828892;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 36px;
+  margin: 0;
+  max-width: 55%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#item-list button {
+  -webkit-transition: background .15s ease;
+  background: #4dab7d;
+  border: none;
+  border-bottom: 2px solid #459970;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  float: right;
+  font-size: 12px;
+  font-style: normal;
+  height: 36px;
+  line-height: 24px;
+  margin: 0;
+  margin-left: -4px;
+  padding: .6em 1.2em .7em;
+  text-rendering: optimizeLegibility;
+  text-transform: uppercase;
+  transition: background .15s ease;
+  vertical-align: bottom;
+  white-space: nowrap;
+}
+
+#item-list button:hover,
+#item-list button:active { background: #459970; }
+
+#item-list section ul.items {
+  background: #fafafa;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 76px;
+  z-index: 1;
+}
+
+#item-list section ul.items > li.item-link {
+  -webkit-transition: all .25s ease;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: all .25s ease;
+}
+
+#item-list section ul.items > li.item-link a {
+  background: #fdfdfd;
+  border-top: 1px solid #eee;
+  color: #777;
+  display: block;
+  margin: 0;
+  min-height: 32px;
+  padding: 22px 25px;
+  position: relative;
+  text-decoration: none;
+}
+
+#item-list section ul.items > li.item-link.active > a { background: #F2F2F3; }
+
+#item-list section li.item-link a > img.preview {
+  float: left;
+  height: auto;
+  margin-right: 22px;
+  width: 60px;
+}
+
+#item-list section li.item-link a > h4 {
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+#item-list section li.item-link a > .meta { color: #888; font-size: 10px; margin: 0; }
+
+#item {
+  background: #fff;
+  border-left: 1px solid #e3e6e9;
+  bottom: 0;
+  box-shadow: 0 0 1px rgba(0,0,0,0.05);
+  overflow: hidden;
+  overflow-y: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 65%;
+  z-index: 10;
+}
+
+#item .container { margin: 0 auto; padding: 0; width: auto; }
+
+#item header { background: #fff; color: #777; padding: 40px 10% 40px; }
+
+#item header .content {
+  -webkit-transition: .15s ease-out all;
+  border: 1px solid #eee;
+  border-bottom: 2px solid #e5e5e5;
+  border-radius: 2px;
+  display: block;
+  overflow: hidden;
+  padding: 20px 20px;
+}
+
+#item header .content > img.preview {
+  float: left;
+  height: auto;
+  margin-right: 20px;
+  width: 150px;
+}
+
+#item header .content > h3 {
+  color: #333;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+  margin-left: 170px;
+}
+
+#item header .content .desc { margin: 1.25em 0; margin-left: 170px; }
+
+#item header .content .meta {
+  color: #AFAFAF;
+  font-size: 11px;
+  margin: 1em 0;
+  margin-left: 170px;
+}
+
+#item header .content .actions { margin: 2em 0; margin-left: 170px; }
+
+#item header .content .actions > button {
+  -webkit-transition: .2s all;
+  background: none;
+  border: 2px solid #bcbcc6;
+  border-radius: 3px;
+  color: #858597;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 400;
+  margin: 0 10px 0 0;
+  padding: .4em .75em;
+  text-transform: uppercase;
+}
+
+#item header .content .actions > button.button-edit:hover,
+#item header .content .actions > button.button-edit:active { background: #4dab7d; border-color: #2E885C; color: white; }
+
+#item header .content .actions > button.button-delete:hover,
+#item header .content .actions > button.button-delete:active { background: #D8625D; border-color: #A84642; color: white; }
+
+#item header .content .actions > button.button-comment:hover,
+#item header .content .actions > button.button-comment:active { background: #66B4CC; border-color: rgb(77, 122, 170); color: white; }
+
+#item section {
+  background: #fff;
+  border-top: 1px solid #eee;
+  overflow: hidden;
+  padding: 30px 10% 50px;
+}
+
+#item section .code-preview { border-bottom: 1px solid #eee; padding-bottom: 35px; }
+
+#item section .code-preview #code-viewer {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 3px;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.17);
+  min-height: 25em;
+  overflow: hidden;
+}
+
+#item section .comments {
+  background: #fff;
+  color: rgb(119, 119, 119);
+  overflow: hidden;
+  padding-top: 20px;
+}
+
+#item section .comments ul > li {
+  margin: 0;
+  margin-bottom: 10px;
+  min-height: 42px;
+  padding: 10px 0;
+  position: relative;
+}
+
+#item section img.avatar {
+  border-radius: 50%;
+  float: left;
+  height: auto;
+  overflow: hidden;
+  width: 45px;
+}
+
+#item section .comments li .commenter {
+  display: block;
+  font-weight: 600;
+  margin-left: 70px;
+  margin-top: 5px;
+}
+
+#item section .comments li .comment { margin: 5px 0 2em 70px; word-wrap: break-word; }
+
+#item section .comments li .date {
+  bottom: 10px;
+  color: #999;
+  font-size: 10px;
+  font-weight: normal;
+  position: absolute;
+  right: 0;
+}
+
+#item section form { margin-left: 70px; position: relative; }
+
+#item section form textarea {
+  -webkit-transition: all .15s ease;
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  font-family: inherit;
+  font-size: 14px;
+  height: 66px;
+  margin-bottom: 15px;
+  margin-top: 0;
+  padding: 10px 15px;
+  transition: all .15s ease;
+  width: 100%;
+}
+
+#item section button.button-post {
+  -webkit-transition: .2s all;
+  background: none;
+  border: 2px solid #bcbcc6;
+  border-radius: 3px;
+  color: #858597;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 400;
+  margin: 0;
+  padding: .6em 1em;
+  text-transform: uppercase;
+}
+
+#item section button.button-post:hover,
+#item section button.button-post:active { background: #4dab7d; border-color: #2E885C; color: white; }
+
+
+/*========================================
+=            API Docs Styling            =
+========================================*/
+
+.api #item-list { min-width: 200px; width: 18%; }
+
+.api #item-list header .version { color: #777; margin-left: 20px; }
+
+.api #item-list section ul.items > li.item-link > a { color: #555; font-weight: 600; padding: 5px 22px; }
+
+.api #item-list section ul.items > li.item-link > a .arrow { margin-top: 10px; }
+
+.api #item-list section ul.items > li.item-link ul > li a { padding: 5px 22px 5px 33px; }
+
+.api #item { width: 82%; }
+
+.api #item header { padding: 29px 5% 28px; }
+
+.api #item header .content { border: none; padding: 0; }
+
+.api #item header .content h1 { font-size: 18px; margin: 0; }
+
+.api #item section {
+  color: #777;
+  line-height: 1.85em;
+  max-width: 840px;
+  padding: 30px 5% 30px 5%;
+}
+
+.api #item section h3 { font-size: 16px; }
+
+.api #item section h4,
+.api #item section h5,
+.api #item section h6 { font-size: 14px; }
+
+.api #item section h1,
+.api #item section h2,
+.api #item section h3,
+.api #item section h4,
+.api #item section h5,
+.api #item section h6 { color: #555; }
+
+.api #item section p { margin: 1.5em 0; }
+
+.api #item section ul,
+.api #item section ol,
+.api #item section dl { list-style: initial; margin: 1.5em 0; padding-left: 3em; }
+
+.api #item section ul { list-style-type: disc; }
+
+.api #item section ol { list-style-type: decimal; }
+
+.api #item section dl { list-style-type: circle; }
+
+
+.api #item section li { }
+
+/*-----  End of API Docs Styling  ------*/
+
+
+
+/*=======================================
+=            Pitches Styling            =
+=======================================*/
+
+.pitches #item-list { }
+
+.pitches #item-list header { }
+
+.pitches #item-list section { }
+
+.pitches #item { }
+
+.pitches #item header { margin-bottom: 10px; padding: 40px 5% 20px; border-bottom: 1px solid #EEE;}
+
+.pitches #item header .content { border: none; padding: 0; }
+
+.pitches #item header .content h1 { font-size: 18px; margin: 0; }
+
+.pitches #item header .content .meta { margin: 0.5em 0 1em; }
+
+.pitches #item header .content .actions { margin: 0; }
+
+.pitches #item header .content .actions > button.button-fork:hover,
+.pitches #item header .content .actions > button.button-fork:active { background: #4dab7d; border-color: #2E885C; color: white; }
+
+.pitches #item section {
+  border: none;
+  color: #777;
+  line-height: 1.85em;
+  max-width: 840px;
+  padding: 0 5% 30px 5%;
+}
+
+.pitches #item section .content {
+    padding-bottom: 40px;
+  
+}
+
+.pitches #item section h3 { font-size: 16px; }
+
+.pitches #item section h4,
+.pitches #item section h5,
+.pitches #item section h6 { font-size: 14px; }
+
+.pitches #item section h1,
+.pitches #item section h2,
+.pitches #item section h3,
+.pitches #item section h4,
+.pitches #item section h5,
+.pitches #item section h6 { color: #555; }
+
+.pitches #item section p { margin: 1.5em 0; }
+
+.pitches #item section ul,
+.pitches #item section ol,
+.pitches #item section dl { list-style: initial; margin: 1.5em 0; padding-left: 3em; }
+
+.pitches #item section ul { list-style-type: disc; }
+
+.pitches #item section ol { list-style-type: decimal; }
+
+.pitches #item section dl { list-style-type: circle; }
+
+.pitches #item section .comments { border-top: 1px solid #eee; padding-top: 0; }
+
+
+
+/*-----  End of Pitches Styling  ------*/
+
+
+
+/*======================================
+=            Editor Styling            =
+======================================*/
+
+.editor #editor-container {
+  bottom: 0;
+  min-width: 200px;
+  position: absolute;
+  top: 0;
+  width: 45%;
+  z-index: 2;
+}
+
+.editor #editor-container #editor {
+  bottom: 0;
+  font-size: 12px !important;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.editor #renderer-container {
+  background: #fff;
+  border-left: 1px solid #e3e6e9;
+  bottom: 0;
+  box-shadow: 0 0 1px rgba(0,0,0,0.05);
+  overflow: hidden;
+  overflow-y: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 55%;
+  z-index: 10;
+}
+
+/*-----  End of Editor Styling  ------*/
+
+
+
+
