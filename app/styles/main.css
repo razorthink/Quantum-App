@@ -29,6 +29,7 @@
   opacity: 0.5;
   padding-top: 35px;
   text-align: center;
+  margin: auto;
   width: 60px;
 }
 
@@ -49,7 +50,7 @@
   width: 180px;
 }
 
-#app-sidebar header { border-bottom: 1px solid rgba(255,255,255,0.1); box-shadow: 0 0px 10px 3px black; padding: 12px 10px; }
+#app-sidebar header { border-bottom: 1px solid rgba(255,255,255,0.1); padding: 12px 10px; }
 
 #app-sidebar nav ul > li { border-bottom: 1px solid rgba(255,255,255,0.1); list-style: none; text-align: center; }
 
@@ -204,7 +205,7 @@
   z-index: 10;
 }
 
-#item .container { margin: 0 auto; padding: 0; width: auto; }
+#item .container { margin: 0 auto; padding: 1px; width: auto; }
 
 #item header { background: #fff; color: #777; padding: 40px 10% 40px; }
 
@@ -244,7 +245,7 @@
 
 #item header .content .actions { margin: 2em 0; margin-left: 170px; }
 
-#item header .content .actions > button {
+button {
   -webkit-transition: .2s all;
   background: none;
   border: 2px solid #bcbcc6;
@@ -253,19 +254,21 @@
   cursor: pointer;
   font-size: 11px;
   font-weight: 400;
-  margin: 0 10px 0 0;
+  margin: 0;
   padding: .4em .75em;
   text-transform: uppercase;
 }
 
-#item header .content .actions > button.button-edit:hover,
-#item header .content .actions > button.button-edit:active { background: #4dab7d; border-color: #2E885C; color: white; }
+#item .actions button { margin-right: 10px; }
 
-#item header .content .actions > button.button-delete:hover,
-#item header .content .actions > button.button-delete:active { background: #D8625D; border-color: #A84642; color: white; }
+button.button-green:hover,
+button.button-green:active { background: #4dab7d; border-color: #2E885C; color: white; }
 
-#item header .content .actions > button.button-comment:hover,
-#item header .content .actions > button.button-comment:active { background: #66B4CC; border-color: rgb(77, 122, 170); color: white; }
+button.button-red:hover,
+button.button-red:active { background: #D8625D; border-color: #A84642; color: white; }
+
+button.button-blue:hover,
+button.button-blue:active { background: #66B4CC; border-color: rgb(77, 122, 170); color: white; }
 
 #item section {
   background: #fff;
@@ -358,7 +361,6 @@
 #item section button.button-post:hover,
 #item section button.button-post:active { background: #4dab7d; border-color: #2E885C; color: white; }
 
-
 /*========================================
 =            API Docs Styling            =
 ========================================*/
@@ -375,7 +377,7 @@
 
 .api #item { width: 82%; }
 
-.api #item header { padding: 29px 5% 28px; }
+.api #item header { padding: 28px 5% 27px; }
 
 .api #item header .content { border: none; padding: 0; }
 
@@ -413,10 +415,8 @@
 
 .api #item section dl { list-style-type: circle; }
 
-
-.api #item section li { }
-
 /*-----  End of API Docs Styling  ------*/
+
 
 
 
@@ -424,26 +424,18 @@
 =            Pitches Styling            =
 =======================================*/
 
-.pitches #item-list { }
+.pitches #item header { border-bottom: 1px solid #EEE; margin-bottom: 10px; padding: 40px 5% 20px; }
 
-.pitches #item-list header { }
-
-.pitches #item-list section { }
-
-.pitches #item { }
-
-.pitches #item header { margin-bottom: 10px; padding: 40px 5% 20px; border-bottom: 1px solid #EEE;}
-
-.pitches #item header .content { border: none; padding: 0; }
+.pitches #item header .content { border: none; padding: 1px; }
 
 .pitches #item header .content h1 { font-size: 18px; margin: 0; }
 
 .pitches #item header .content .meta { margin: 0.5em 0 1em; }
 
-.pitches #item header .content .actions { margin: 0; }
+.pitches #item header .content .actions { margin: 1px; }
 
-.pitches #item header .content .actions > button.button-fork:hover,
-.pitches #item header .content .actions > button.button-fork:active { background: #4dab7d; border-color: #2E885C; color: white; }
+.pitches  button.button-fork:hover,
+.pitches  button.button-fork:active { background: #4dab7d; border-color: #2E885C; color: white; }
 
 .pitches #item section {
   border: none;
@@ -453,10 +445,7 @@
   padding: 0 5% 30px 5%;
 }
 
-.pitches #item section .content {
-    padding-bottom: 40px;
-  
-}
+.pitches #item section .content { padding-bottom: 40px; }
 
 .pitches #item section h3 { font-size: 16px; }
 
@@ -485,9 +474,147 @@
 
 .pitches #item section .comments { border-top: 1px solid #eee; padding-top: 0; }
 
-
-
 /*-----  End of Pitches Styling  ------*/
+
+
+
+
+/*===========================================
+=            Pitches New Styling            =
+===========================================*/
+
+.pitches.new #item header {
+    padding: 24px 2% 18px;
+ }
+
+.pitches.new #item section {
+    padding: 30px 2% 50px;
+ }
+
+.pitches.new #item .label { color: #777; font-weight: normal; vertical-align: middle; }
+
+.pitches.new #item header input {
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+  color: #777;
+  font-size: 14px;
+  line-height: 1.428571429;
+  padding: 4px 6px;
+  vertical-align: middle;
+  width: 300px;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+}
+
+.pitches.new #item section .form-container {
+    padding: 3% 2% 2%;
+}
+
+.pitches.new #item section .form-container .img-upload {
+    -webkit-transition: .15s ease-out all; 
+    border: 1px solid #eee; 
+    border-bottom: 2px solid #e5e5e5; border-radius: 2px; display: block; overflow: hidden; padding: 20px 20px;
+    text-align: center;
+}
+
+.pitches.new #item section .form-container .img-upload img {
+    padding: 10px;
+    border: 1px dashed #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    background: white;
+    margin-bottom: 3%;
+}
+
+.pitches.new #item section .editor-container {
+    padding: 2%;
+}
+
+/*-----  End of Pitches New Styling  ------*/
+
+
+
+/*=======================================
+=            Home Page Style            =
+=======================================*/
+
+#app.home {
+    background: linear-gradient(45deg,  #030024 0%,#086572 100%);
+}
+
+#app.home #app-sidebar {
+    width: 180px;
+    /* background: rgb(109, 8, 8); */
+}
+
+#app.home .logo { opacity: 1;}
+
+#app.home #app-content {
+    background: url(../images/bg-net.png);
+    left: 180px;
+}
+
+#app.home #app-content .brandbox {
+    vertical-align: middle;
+    height: 600px;
+    width: 100%;
+    text-align: center;
+    padding: 12em 0;
+}
+
+#app.home #app-content .brandbox h1 {
+    font-size: 48px;
+    color: white;
+    font-weight: 600;
+    width: 70%;
+    margin: auto;
+    padding-bottom: 1%;
+    border-bottom: 1px solid white;
+    margin-bottom: 3%;
+}
+
+#app.home #app-content .brandbox .form-container {
+    margin-bottom: 2%;
+
+}
+
+#app.home #app-content .brandbox .form-container input {
+    border: 2px solid #bcbcc6;
+  
+    border-radius: 3px;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.4);
+    margin: 1% 0;
+    width: 300px;
+    color: white;
+}
+
+#app.home #app-content .brandbox .actions {
+}
+
+#app.home #app-content .brandbox .actions button {
+    color: white;
+
+    padding: 0.5% 3%;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 1.25em;
+    background: rgba(255, 255, 255, 0.08);
+    text-shadow: 0 0 2px black;
+}
+
+#app.home #app-content .brandbox .actions button.sign-in {
+
+}
+
+#app.home #app-content .brandbox .actions button.sign-up {
+
+}
+
+/*-----  End of Home Page Style  ------*/
 
 
 
@@ -528,7 +655,3 @@
 }
 
 /*-----  End of Editor Styling  ------*/
-
-
-
-

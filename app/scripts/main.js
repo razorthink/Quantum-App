@@ -21,9 +21,33 @@ $(function () {
 	}
 
 	if($("#app").hasClass("visuals")) {
-		$(".button-edit, .button-new").on("click", function () {
+		$(".button-green, .button-new").on("click", function () {
 			window.location.href = "/editor.html"
 		});
 	}
 
+	if($("#app").hasClass("pitches new") ) {
+		$("#editor-1").ckeditor({
+			toolbar: [
+				[ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo', 'Bold', 'Italic' ],
+				{ name: 'paragraph', items : [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv',
+					'-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl' ] }
+			]
+		});
+
+		$("#img-upload").hide();
+
+		$(".upload-btn").on("click", function () {
+			$("#img-upload").trigger("click");
+		});	
+	}
+
+	if($("#app").hasClass("pitches") ) {
+		$(".button-new").on("click", function () {
+			window.location.href = "/pitches-new.html"
+		});
+	}
+
 });
+
+

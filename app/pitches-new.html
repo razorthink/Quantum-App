@@ -26,7 +26,7 @@
         <![endif]-->
 
         <!-- App BEGINS -->
-        <div id="app" class="narrow pitches">
+        <div id="app" class="narrow pitches new">
 
             <!-- App sidebar BEGINS -->
             <div id="app-sidebar">
@@ -36,7 +36,7 @@
                 <nav>
                     <ul>
                         <li class="visuals"><a href="/visuals.html">VISUALS</a></li>
-                        <li class="pitches active"><a href="#">PITCHES</a></li>
+                        <li class="pitches active"><a href="/pitches.html">PITCHES</a></li>
                         <li class="api"><a href="/api.html">API DOCS</a></li>
                     </ul>
                 </nav>
@@ -91,69 +91,33 @@
                 <div id="item">
                     <header>
                         <div class="container">
-                            <div class="content">
+                            <div class="content clearfix">
                                 <div class="actions pull-right">
-                                    <button class="button-fork">Fork</button>
+                                    <button class="button-green button-green">Save</button>
+                                    <button class="button-blue button-blue">Cancel</button>
+                                    <button class="button-red button-red"><span class="glyphicon glyphicon-trash"></span></button>
                                 </div>
-                                <h1>An area graph that shows the enery usage</h1>
-                                <p class="meta">
-                                    <span class="owner">Owner: Sandeep S Kumar</span> | <span class="date">Created on: 17th July 2013</span>
-                                </p>
+
+                                <div class="form pull-left">
+                                    <span class="fs-large label">Title</span>
+                                    <input type="text fs-large title" placeholder="Visualisation Pitch Title"
+                                </div>
                             </div>
                         </div>
                     </header>
                     <section>
-                        
-                        <div class="content" contenteditable="true">
-                            <h3>Introduction</h3>
-
-                            <p>
-                               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, explicabo, voluptates, culpa temporibus ipsa commodi similique dignissimos aperiam veniam cum nobis mollitia non!
-                            </p>
-
-                            <img src="images/pitches/test2.png" alt="Test image">
-
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, fugit, qui, ipsa dicta quae eos recusandae sit labore optio quidem non impedit minus esse?
-                            </p>
-
-                            <ul>
-                                <li><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, deleniti.</span></li>
-                                <li><span>Minus, est, quisquam aliquid quasi numquam expedita nulla eius esse!</span></li>
-                                <li><span>A, at ipsum quos eius. Tempora blanditiis unde necessitatibus facere!</span></li>
-                                <li><span>Expedita, reiciendis labore cum dicta consequatur voluptate maxime iure temporibus.</span></li>
-                                <li><span>Cum, illum dolorum reprehenderit obcaecati fuga nemo fugit a non.</span></li>
-                            </ul>
-
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium ratione nemo perferendis ipsum? Quod, quis ut dolore maiores earum nihil.
-                            </p>
-                        </div>
-
-                        <div class="comments container">
-                            <ul>
-                                <li>
-                                    <img src="images/avatars/avatar.jpeg" alt="Avatar" class="avatar">
-                                    <span class="commenter">Sandeep S Kumar</span>
-                                    <p class="comment">This is a test comment. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, tempora laudantium blanditiis.</p>
-                                    <span class="date">A few minutes ago</span>
-                                </li>
-                                <li>
-                                    <img src="images/avatars/avatar.jpeg" alt="Avatar" class="avatar">
-                                    <span class="commenter">Sandeep S Kumar</span>
-                                    <p class="comment">This is a test comment. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, impedit!</p>
-                                    <span class="date">A few minutes ago</span>
-                                </li>
-                            </ul>
-                            <div>
-                                <img src="images/avatars/avatar.jpeg" alt="Avatar" class="avatar">
-                                <form>
-                                    <textarea placeholder="Your comment..."></textarea>
-                                    <button class="button-post">Post</button>
-                                </form>
+                        <div class="form-container">
+                            <div class="img-upload">
+                                <img src="/images/pitches/test2.png" class="hidden">
+                                <div class="action">
+                                    <button class="button-blue upload-btn">Select Image</button>
+                                    <input type="file" class="" id="img-upload">
+                                </div>
                             </div>
                         </div>
-
+                        <div class="editor-container">
+                            <textarea id="editor-1"></textarea>
+                        </div>
                     </section>
 
                 </div>
