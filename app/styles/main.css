@@ -571,7 +571,7 @@ button.button-blue:active { background: #66B4CC; border-color: rgb(77, 122, 170)
     font-weight: 600;
     width: 70%;
     margin: auto;
-    padding-bottom: 1%;
+    padding-bottom: 3%;
     border-bottom: 1px solid white;
     margin-bottom: 3%;
 }
