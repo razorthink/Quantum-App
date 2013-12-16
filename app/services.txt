@@ -1,0 +1,33 @@
+Auth:
+	user/login		:POST
+	user/logout		:GET
+	user/settings	:GET
+	user/profile	:GET
+
+Projects:
+	visuals/			:GET	## List of all visuals
+	visuals/:user		:GET	## List of all visuals of a user
+	visuals/:user		:POST	## New visual by a user
+	visuals/:user		:DELETE	## Delete a user's visual
+	visuals/:user		:PUT	## Update a user's visual
+
+	## list of all comments of a user's project
+	visuals/:user/:projectID/comments		:GET
+
+	## post a new comment in user's project
+	visuals/:user/:projectID/comments		:POST
+
+Pitches:
+	pitches/			:GET	## List of all pitches
+	pitches/:user		:GET	## List of all pitches of a user
+	pitches/:user		:POST	## New pitch by a user
+	pitches/:user		:DELETE	## Delete a user's pitch
+	pitches/:user		:PUT	## Update a user's pitch
+
+	## list of all comments of a user's pitch
+	pitches/:user/:pitchID/comments		:GET
+
+	## post a new comment in user's pitch
+	pitches/:user/:pitchID/comments		:POST
+
+
