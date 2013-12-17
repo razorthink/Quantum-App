@@ -1,4 +1,5 @@
-var appData		= require('../fixture'),
+var mongoose	= require('mongoose'),
+	User 		= require('../schema/user'),
 	_			= require('underscore');
 
 var users = {
@@ -6,42 +7,51 @@ var users = {
 		var email = req.body.email,
 			pswd = req.body.password;
 
-		var user = _.find(appData.users, function (user) {
-			return (user.email == email && user.password == pswd);
+		User.findOne({email: email, password: pswd}, function (err, user) {
+			if(!_.isNull(user)) {
+				req.session.isLoggedIn = true;
+				req.session.user = user._id;
+				console.log("User: " + user.fname + " logged in.");
+
+				res.send(200, "Login successful");
+			} else {
+				res.send(400, "Invalid email or password, please verify and try again");
+			}
 		});
-
-		if (!_.isUndefined(user)) {
-			req.session.isLoggedIn = true;
-
-			req.session.user = user.UID;
-
-			console.log("User: " + user.fname + " logged in.");
-			res.send("login successful");
-		} else {
-			res.send("Invalid email or password, please verify and try again");
-		}
 	},
 
 	logout: function (req, res) {
 		req.session.isLoggedIn = false;
 
 		if(!_.isUndefined(req.session.user)) {
-			var user = _.find(appData.users, function (user) {
-				return (user.UID == req.session.user);
-			});
+			User.findOne({_id: req.session.user}, function (err, user) {
+				req.session.user = undefined;
+				console.log("User: " + user.fname + " logged out.");
 
-			console.log("User: " + user.fname + " logged out.");
-			req.session.user = undefined;
-			res.send("logout successful");
+				res.send(200, "Logout successful");
+			});
 		} else {
-			res.send("Can not logout before logging in");
+			res.send(400, "Cannot logout before logging in");
 		}
 	},
 
 	signUp: function (req, res) {
-		//TODO add credentials into db
+		User.findOne({email: req.body.email}, function (err, user) {
+			if(_.isNull(user)) {
+				//Create a new user
+				User.create({
+					fname: req.body.fname,
+					lname: req.body.lname,
+					email: req.body.email,
+					password: req.body.password
+				}, function (err) {
+					res.send(200, "Signup successful");
+				});
+			} else {
+				res.send(400, "User with that email already exists");
+			}
+		});
 	}
-
 };
 
 module.exports = users;

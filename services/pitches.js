@@ -1,4 +1,5 @@
-var appData		= require('../fixture'),
+var mongoose	= require('mongoose'),
+	User 		= require('../schema/pitch'),
 	_			= require('underscore');
 
 var pitches = {

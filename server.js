@@ -1,6 +1,9 @@
 var	express		= require('express'),
-	server		= express(),
-	services	= require('./services');
+	services	= require('./services'),
+	mongoose	= require('mongoose'),
+	server		= express();
+
+mongoose.connect('localhost', 'quantum');
 
 server.use(express.static(__dirname + '/app'));
 server.use(express.bodyParser());
@@ -11,3 +14,6 @@ services(server); //Handle AJAX requests
 
 server.listen(8030);
 console.log("Serving static pages on port: 8030");
+
+//Globally expose server
+module.exports = server;
